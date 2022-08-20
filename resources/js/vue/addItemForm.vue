@@ -1,6 +1,6 @@
 <template>
     <div class="addItem">
-        <input type="text" v-model="item.name"/>
+        <input type="text" v-model="item.name" id="InputFeild"/>
         <button class="button1" @click="addItem()" >Add</button>
     </div>
 </template>
@@ -27,6 +27,7 @@ export default {
 
             axios.post('api/item/store', {
                 item: this.item
+
             })
             .then(response=>{
                     if(response.status ==201){
@@ -38,6 +39,8 @@ export default {
             .catch( error=>{
                 console.log(error);
             })
+
+            document.getElementById('InputFeild').value = '';
         }
     }
 

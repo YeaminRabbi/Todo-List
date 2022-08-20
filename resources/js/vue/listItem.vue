@@ -21,7 +21,7 @@ export default {
             })
             .then(response => {
                 if(response.status == 200){
-                    this.$emit('itemcheanged');
+                    this.$emit('itemchanged');
                 }
             })
             .catch(error => {
@@ -29,7 +29,7 @@ export default {
             })
         },
         removeItem() {
-            axios.delete('api/item' + this.item.id)
+            axios.delete('api/item/' + this.item.id)
             .then(response => {
                 if(response.status ==200){
                     this.$emit('itemchanged');
