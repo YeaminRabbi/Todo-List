@@ -5,7 +5,7 @@
             v-model ="item.completed"
         />
         <span :class="[item.completed ? 'completed': '', 'itemText']">{{item.name}}</span>
-        <button @click="removeItem()" class="trashcan">Remove</button>
+        <button type="submit" @click="removeItem()" class="trashcan">Remove</button>
     </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
                 console.log(error);
             })
 
-            
+
         },
         removeItem() {
             axios.delete('api/item/' + this.item.id)
